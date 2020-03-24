@@ -1,16 +1,32 @@
-import React from 'react';
-import { Route } from 'react-router-dom';
-import Layout from './components/Layout';
-import Contact from './components/Contact'
-import './App.css';
+import React, { Component } from 'react';
+import { connect } from 'react-redux';
 
-function App() {
-  return (
-    <div className="App">
-      <Route path="/" exact component={Layout} />
-      <Route path="/contact" component={Contact} />
-    </div>
-  );
+// Components
+import Layout from './components/Layout';
+
+class App extends Component {
+
+  render() {
+    return (
+      <div>
+        <h2>Value: {this.props.buildings}</h2>
+        <button onClick={this.props.onSomething}>increase buildings</button>
+        <Layout buildings={this.props.buildings} />
+      </div>
+    );
+  }
 }
 
-export default App;
+const mapStateToProps = state => {
+  return {
+    buildings: state.buildings
+  };
+};
+
+const mapDispatchToProps = dispatch => {
+  return {
+    onSomething: () => dispatch({ type: 'SOMETHING' })
+  };
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(App);

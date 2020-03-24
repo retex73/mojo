@@ -1,9 +1,12 @@
 import React from 'react'
+import { connect } from 'react-redux'
 
-export default function Layout() {
+export default function Layout(props) {
+
     return (
         <div>
-            <h1>Layout page</h1>
+            <h2>Layout page</h2>
+            <h3>Buildings: {props.buildings}</h3>
         </div>
     )
 }
