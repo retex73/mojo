@@ -1,0 +1,26 @@
+.PageWrapper {
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    
+}
+
+.Row {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    width: 100%;
+}
+
+
+
+
+.Column-1 {
+    display: flex;
+    flex-direction: column;
+    flex-basis: 100%;
+    flex: 2; 
+    
+}
+
